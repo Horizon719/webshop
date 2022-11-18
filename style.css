@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin: 0;
     background-color: rgb(173, 173, 173);
+    font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
 *{
@@ -34,18 +35,26 @@ nav{
 
 nav ul li{
     display: inline-block;
-    margin: auto 5px auto 5px;
-    padding: 3px;
-    border: 1px solid rgb(0, 149, 255);
 }
 
 nav ul li a{
     text-decoration: none;
     color: rgb(0, 149, 255);
+    margin: auto 5px auto 5px;
+    padding: 10px;
+    border: 1px solid rgb(0, 149, 255);
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color: #ccc;
+    background-color: rgb(0, 149, 255);
+    border-radius: 5px;
 }
 
  nav ul{
     text-decoration: none;
+    padding: 0;
 }
 
 article{
@@ -66,14 +75,23 @@ article{
 
 .img{
     text-align: center;
+    overflow: hidden;
 }
 
 img{
+    width: 100%;
     max-width: 250px;
+    max-height: 200px;
 }
 
 button{
-    margin-right: 85px;
+    font-size: 8px + 2vw;
+}
+
+.arstb{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
 span{
@@ -86,19 +104,19 @@ aside{
 }
 
 aside{
-    margin-left: 15px;
+    margin: 0 15px 15px 15px;
     background-color: white;
     padding: 10px;
 }
 
-.szelesebb{
-    width: 70%;
-    text-align: left;
+#kosar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-.keskenyebb{
-    width: 30%;
-    text-align: right;
+#kosar span{
+    border: none;
 }
 
 h4{
@@ -106,14 +124,23 @@ h4{
     border-top: 1px solid black;
 }
 
-.fizetes{
-    position: relative;
-    bottom: 0;
-    left: 0;
-}
-
 footer{
     grid-area: f;
+}
+
+p{
+    font-size: 8px + 2vw;
+}
+
+.iksz{
+    color: red;
+}
+
+@media screen and (max-width: 1130px){
+    article{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5px;
+    }   
 }
 
 @media screen and (max-width: 700px){
@@ -122,8 +149,8 @@ footer{
         grid-template-areas: 
         "h"
         "n"
-        "a"
         "as"
+        "a"
         "f";
     }
     
@@ -134,6 +161,11 @@ footer{
 }
 
 @media screen and (max-width: 400px){
+    nav ul li{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
     article{
         grid-template-columns: 1fr;
         grid-gap: 5px;
